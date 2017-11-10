@@ -8,4 +8,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   include ApplicationHelper
+
+  # 如果已登录，返回 true
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
 end
